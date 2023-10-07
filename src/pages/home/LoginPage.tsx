@@ -1,9 +1,20 @@
 import React from "react";
-import {Button, Image, SafeAreaView, StatusBar, StyleSheet, Text, TextInput, View} from "react-native";
+import {
+    Button,
+    Image,
+    SafeAreaView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View
+} from "react-native";
 import BouncyCheckbox from "react-native-bouncy-checkbox/build/dist/BouncyCheckbox";
+import {SCREENS} from "../../helpers/constants";
 
 
-const LoginPage = () => {
+const LoginPage = ({ navigation }) => {
     return (
         <SafeAreaView>
             <StatusBar backgroundColor={styles.statusBar.backgroundColor} barStyle={"dark-content"} animated={true}/>
@@ -43,7 +54,12 @@ const LoginPage = () => {
                     <Button title={"Đăng nhập"} color={styles.btnLogin.color} />
                 </View>
                 <View style={styles.btnSignUp}>
-                    <Text style={styles.btnSignUpText}>Đăng ký</Text>
+                   <TouchableOpacity>
+                    <Text style={styles.btnSignUpText}
+                          onPress={() => navigation.navigate(SCREENS.SIGNUP)}>
+                        Đăng ký
+                    </Text>
+                   </TouchableOpacity>
                 </View>
             </View>
         </SafeAreaView>

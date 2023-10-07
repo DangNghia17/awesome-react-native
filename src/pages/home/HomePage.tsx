@@ -10,8 +10,9 @@ import {
     TextInput,
     TouchableOpacity
 } from "react-native";
+import {SCREENS} from "../../helpers/constants";
 
-const HomePage = () => {
+const HomePage = ({navigation}) => {
     console.log("Bắt đầu HomePage");
     return (
         <ImageBackground
@@ -38,24 +39,25 @@ const HomePage = () => {
                     placeholder="Password"
                     secureTextEntry={true}
                 />
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate(SCREENS.LOGIN)}>
                     <Text style={styles.buttonText}>Continue</Text>
                     <Image
-                        source={require('AwesomeProject/assets/images/chevron-right.png')} // Đặt đường dẫn đến ảnh của bạn
+                        source={require('AwesomeProject/assets/images/chevron-right.png')}
                         style={styles.icon}
                     />
                 </TouchableOpacity>
                 <Text style={styles.text3}>
                     - - - - - - - - - - - - - - - - Or - - - - - - - - - - - - - - - -
                 </Text>
-                <TouchableOpacity style={styles.button2}>
-                    <Text style={styles.buttonText}>
+                <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate(SCREENS.SIGNUP)}>
+                    <Text style={styles.buttonText} >
                         Create an account
                     </Text>
                 </TouchableOpacity>
 
             </SafeAreaView>
         </ImageBackground>
+
     )
 }
 

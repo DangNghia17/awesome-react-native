@@ -55,6 +55,9 @@ const SignUpPage = () => {
                     secureTextEntry={true}
                     placeholderTextColor={"#AFAFAF"}
                 />
+                <TouchableOpacity>
+                    <Image source={require('../../assets2/eye-slash-solid.png')} style={styles.eyeSlash}/>
+                </TouchableOpacity>
             </View>
             <View style={styles.inputContainer}>
                 <Text style={styles.inputLabel}>Xác nhận mật khẩu</Text>
@@ -67,6 +70,9 @@ const SignUpPage = () => {
                     secureTextEntry={true}
                     placeholderTextColor={"#AFAFAF"}
                 />
+                <TouchableOpacity>
+                    <Image source={require('../../assets2/eye-slash-solid.png')} style={styles.eyeSlash}/>
+                </TouchableOpacity>
             </View>
             <View>
                 <Text style={{marginTop: 20, color: "red", fontWeight: "500"}}>Lưu ý</Text>
@@ -116,6 +122,13 @@ const styles = StyleSheet.create({
         width: 20,
         height: 20,
         resizeMode: 'contain',
+    },
+    eyeSlash: {
+        width: 20,
+        height: 20,
+        resizeMode: 'contain',
+        alignSelf: 'flex-end',
+        marginTop : -45
     },
     signUpText: {
         marginLeft: 120,
