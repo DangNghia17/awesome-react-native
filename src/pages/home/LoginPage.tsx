@@ -14,7 +14,7 @@ import BouncyCheckbox from "react-native-bouncy-checkbox/build/dist/BouncyCheckb
 import {SCREENS} from "../../helpers/constants";
 
 
-const LoginPage = ({ navigation }) => {
+const LoginPage = ({navigation}) => {
     return (
         <SafeAreaView>
             <StatusBar backgroundColor={styles.statusBar.backgroundColor} barStyle={"dark-content"} animated={true}/>
@@ -51,15 +51,16 @@ const LoginPage = ({ navigation }) => {
                     <Text style={styles.textForgotPassword}>Quên mật khẩu?</Text>
                 </View>
                 <View style={styles.btnLogin}>
-                    <Button title={"Đăng nhập"} color={styles.btnLogin.color} />
+                    <Button title={"Đăng nhập"} color={styles.btnLogin.color}
+                            onPress={() => navigation.navigate(SCREENS.MESSAGE)}/>
                 </View>
                 <View style={styles.btnSignUp}>
-                   <TouchableOpacity>
-                    <Text style={styles.btnSignUpText}
-                          onPress={() => navigation.navigate(SCREENS.SIGNUP)}>
-                        Đăng ký
-                    </Text>
-                   </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Text style={styles.btnSignUpText}
+                              onPress={() => navigation.navigate(SCREENS.SIGNUP)}>
+                            Đăng ký
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </SafeAreaView>
@@ -128,27 +129,27 @@ const styles = StyleSheet.create({
 
     },
     btnLogin: {
-        color : "#3BCCBB",
-        marginTop : 40,
-        backgroundColor : "red",
+        color: "#3BCCBB",
+        marginTop: 40,
+        backgroundColor: "red",
         borderRadius: 5,
         overflow: "hidden",
     },
     btnSignUp: {
         marginTop: 18,
-        borderWidth : 1,
-        borderRadius : 5,
-        borderColor :  "#3BCCBB",
-        height : 35
+        borderWidth: 1,
+        borderRadius: 5,
+        borderColor: "#3BCCBB",
+        height: 35
 
     },
     btnSignUpText: {
         color: "#3BCCBB",
-        textAlign : "center",
-        paddingTop : 4 ,
-        fontSize : 15 ,
+        textAlign: "center",
+        paddingTop: 4,
+        fontSize: 15,
         textTransform: 'uppercase',
-        fontWeight : "600"
+        fontWeight: "600"
     }
 
 });

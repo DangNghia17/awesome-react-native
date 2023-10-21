@@ -11,13 +11,14 @@ import {
 } from "react-native";
 import React from "react";
 import BouncyCheckbox from "react-native-bouncy-checkbox/build/dist/BouncyCheckbox";
+import {SCREENS} from "../../helpers/constants";
 
-const SignUpPage = () => {
+const SignUpPage = ({navigation}) => {
     return (
         <SafeAreaView style={{paddingHorizontal: 15}}>
             <StatusBar backgroundColor={styles.statusBar.backgroundColor} barStyle={"dark-content"} animated={true}/>
             <View style={styles.container}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate(SCREENS.LOGIN)}>
                     <Image source={require('../../assets2/chevron-left-solid.png')} style={styles.arrowLeft}/>
                 </TouchableOpacity>
                 <Text style={styles.signUpText}> Đăng ký</Text>
@@ -101,7 +102,7 @@ const SignUpPage = () => {
                 <Text style={styles.linkText}>Điều khoản sử dụng</Text>
             </View>
             <View style={styles.btnLogin}>
-                <Button title={"Đăng ký tài khoản"} color={styles.btnLogin.color}/>
+                <Button title={"Đăng ký tài khoản"} color={styles.btnLogin.color} onPress={() => {navigation.navigate(SCREENS.MESSAGE)}}/>
             </View>
         </SafeAreaView>
     )
